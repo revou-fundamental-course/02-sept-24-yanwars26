@@ -1,0 +1,50 @@
+
+.main-header, h1{
+    text-align: center;
+    margin: 0;
+    padding-top: 0%;
+}
+.pilih-bangun-datar>h4{
+    margin: 0;
+    margin-top: 10px;
+}
+
+.pilih-opsi{
+    width: 300px;
+    height: 30px;
+    text-align: center;
+    font-weight: bold;
+}
+.form-segitiga>h1{
+    display: flex;
+    height: 80px;
+    background-color: #03346E;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    font-weight: bold;
+    color: white;
+}
+
+.form-jajargenjang>h1{
+    display: flex;
+    height: 80px;
+    background-color: #03346E;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    font-weight: bold;
+    color: white;
+}
+.segitiga-content{
+    display: flex;
+    flex-direction: column;
+}
+.gambar-segitiga{
+    background-image: url("segitiga-img.png");
+    height: 200px;
+    width: 200px;
+    background-size: cover;
+    background-position: center;
+    align-self: center;
+}

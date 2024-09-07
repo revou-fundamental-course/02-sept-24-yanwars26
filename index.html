@@ -7,6 +7,33 @@
     <link rel="stylesheet" href="css\style.css">
 </head>
 <body>
-    
+    <header class="main-header">
+        <h1>Welcome to Katik</h1>
+        <div>
+            <label>Hai Sobat, Selamat datang di Katik :)</label><br>
+            <label>Sebuah web apps sederhana yang berfungsi untuk menghitung nilai luas dan keliling bangun datar</label>    
+        </div>
+        </header>
+
+    <main>
+        <div class="pilih-bangun-datar">
+            <h4>Silahkan pilih bangun datar terlebih dahulu:</h4>
+            <select name="pilih-opsi" id="pilih-opsi" class="pilih-opsi">
+                <option value="segitiga">Segitiga</option>
+                <option value="jajargenjang">Jajar Genjang</option>
+            </select>
+        </div>
+
+        <div class="form-segitiga" id="form-segitiga" style="display: none;">
+            <h1>Luas Segitiga</h1>
+            <div class="segitiga-content">
+                <div class="gambar-segitiga"></div>
+            </div>
+        </div>
+        <div class="form-jajargenjang" id="form-jajargenjang" style="display: none;">
+            <h1>Luas Jajar Genjang</h1>
+        </div>
+    </main>
+    <script src="js\script.js"></script>
 </body>
 </html>
