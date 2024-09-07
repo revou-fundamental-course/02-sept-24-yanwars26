@@ -19,8 +19,8 @@
         <!-- Memilih Bangun Datar -->
         <section class="pilih-bangun-datar">
                 <h4>Silahkan pilih bangun datar terlebih dahulu:</h4>
-                <button type="button" class="btn-segitiga">Segitiga</button>
-                <button type="button" class="btn-jajargenjang">Jajar Genjang</button>
+                <button type="button" class="btn">Segitiga</button>
+                <button type="button" class="btn">Jajar Genjang</button>
         </section>
 
         <!-- Main Content -->
@@ -30,12 +30,35 @@
                 </header>
 
                 <!-- Gambar Segitiga -->
-                <article class="luas-segitiga-content">
-                    <div class="luas-segitiga-img"></div>
-                    <p>Luas Segitga Yaitu:</p>
-                </article>
+                <section class="konten-segitiga">
+                    <div class="gambar-segitiga">
+                        <img src="segitiga-img.png" alt="">
+                    <!-- Rumus Luas Segitiga -->
+                    </div>
+                        <label>Rumus Luas Segitiga :</label>
+                        <label class="rumus-segitiga">L = 1/2 x a x t</label>
+                        <p>Dimana: <br>L = Luas <br>a = Panjang Alas <br>t = Tinggi</p>
+                </section>
+                <!-- Hitung Luas Segitiga -->
+                <section>
+                    <h1>Hitung Luas Segitiga</h1>
+                    <form action="#">
+                        <div>
+                            <label for="Alas">Alas Segitiga :</label>
+                            <input type="number" placeholder="Hanya angka">
+                        </div>
+                        <div>
+                            <label for="Tinggi">Tinggi Segitiga :</label>
+                            <input type="number" placeholder="Hanya angka">
+                        </div>
+                        <p for="hasil" id="hasil">Hasil Perhitungan:</p>
+                        <div class="btn-hitung">
+                            <button type="submit" class="button-hitung">Hitung</button>
+                        </div>
+                    </form>
+                </section>
             </section>
     </main>
-    <!-- <script src="js\script.js"></script> -->
+
 </body>
 </html>
