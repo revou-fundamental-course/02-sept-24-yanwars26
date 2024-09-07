@@ -57,7 +57,7 @@ img{
 }
 
 input[type=number]{
-    width: 100%;
+    width: 49vw;
     height: 30px;
 }
 .btn-hitung{
@@ -75,4 +75,12 @@ input[type=number]{
 }
 .button-hitung:hover{
     background-color: #03346E;
+}
+
+.main-content{
+    display: flex;
+    margin-right: 5px;
+}
+.main-content>aside{
+    flex: 1;
 }
