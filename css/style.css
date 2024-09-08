@@ -84,3 +84,7 @@ input[type=number]{
 .main-content>aside{
     flex: 1;
 }
+
+.perhitungan>p{
+    margin: 0;
+}

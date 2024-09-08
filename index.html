@@ -41,23 +41,27 @@
                         </div>
                             <label>Rumus Luas Segitiga :</label>
                             <label class="rumus-segitiga">L = 1/2 x a x t</label>
-                            <p>Dimana: <br>L = Luas <br>a = Panjang Alas <br>t = Tinggi</p>
+                            <p>Dimana: <br>L = Luas <br>a = Panjang Alas <br>t = Tinggi<br><br></p>
                     </section>
                     <!-- Hitung Luas Segitiga -->
                     <section>
                         <h1>Hitung Luas Segitiga</h1>
-                        <form action="#">
+                        <form onsubmit="event.preventDefault();hitungLuasSegitiga();">
                                 <div>
                                     <label for="Alas">Alas Segitiga :</label>
-                                    <input type="number" placeholder="Hanya angka">
+                                    <input id="alas-segitiga" type="number" placeholder="Masukan Alas">
                                 </div>
                                 <div>
                                     <label for="Tinggi">Tinggi Segitiga :</label>
-                                    <input type="number" placeholder="Hanya angka">
+                                    <input id="tinggi-segitiga" type="number" placeholder="Masukan Tinggi">
                                 </div>
-                            <p for="hasil" id="hasil">Hasil Perhitungan:</p>
+                            <p>Hasil Perhitungan:</p>
+                            <div class="perhitungan">
+                                <p id="rumus-luas-segitiga"></p>
+                                <p id="hasil-luas"></p>
+                            </div>
                             <div class="btn-hitung">
-                                <button type="submit" class="button-hitung">Hitung</button>
+                                <button type="submit" class="button-hitung" >Hitung</button>
                             </div>
                         </form>
                     </section>
@@ -76,25 +80,33 @@
                     <section class="konten-segitiga">
                         <div class="gambar-segitiga">
                             <img src="img/segitiga-img.png" alt="">
-                        <!-- Rumus Luas Segitiga -->
+                        <!-- Rumus Keliling Segitiga -->
                         </div>
-                            <label>Rumus Luas Segitiga :</label>
-                            <label class="rumus-segitiga">L = 1/2 x a x t</label>
-                            <p>Dimana: <br>L = Luas <br>a = Panjang Alas <br>t = Tinggi</p>
+                            <label>Rumus Keliling Segitiga :</label>
+                            <label class="rumus-segitiga">K = S1 x S2 x S3</label>
+                            <p>Dimana: <br>K = Keliling <br>S1 = Sisi ke 1 <br>S2 = Sisi ke 2<br>S3 = Sisi ke 3</p>
                     </section>
-                    <!-- Hitung Luas Segitiga -->
+                    <!-- Hitung Keliling Segitiga -->
                     <section>
-                        <h1>Hitung Luas Segitiga</h1>
-                        <form action="#">
+                        <h1>Hitung Keliling Segitiga</h1>
+                        <form onsubmit="event.preventDefault();hitungKelilingSegitiga()">
                             <div>
-                                <label for="Alas">Alas (cm):</label>
-                                <input type="number" placeholder="Masukan angka">
+                                <label for="S1">S1 :</label>
+                                <input type="number" placeholder="Masukan Sisi ke-1">
                             </div>
                             <div>
-                                <label for="Tinggi">Tinggi (cm) :</label>
-                                <input type="number" placeholder="Masukan angka">
+                                <label for="S2">S2 :</label>
+                                <input type="number" placeholder="Masukan Sisi ke-2">
                             </div>
-                            <p for="hasil" id="hasil">Hasil Perhitungan:</p>
+                            <div></div>
+                                <label for="S3">S3 :</label>
+                                <input type="number" placeholder="Masukan Sisi ke-3">
+                            </div>
+                            <p>Hasil Perhitungan:</p>
+                            <div class="perhitungan"></div>
+                                <p id="rumus-luas-segitiga"></p>
+                                <p id="hasil-luas"></p>
+                            </div>
                             <div class="btn-hitung">
                                 <button type="submit" class="button-hitung">Hitung</button>
                             </div>
@@ -103,6 +115,6 @@
                 </section>
             </aside>
     </main>
-
+<script src="js/script.js"></script>
 </body>
 </html>
