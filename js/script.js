@@ -3,7 +3,7 @@ function hitungLuasSegitiga() {
     var alas = parseFloat(document.getElementById("alas-segitiga").value);
     var tinggi = parseFloat(document.getElementById("tinggi-segitiga").value);
     var hasilLuas = document.getElementById("hasil-luas");
-    var rumusluas =  document.getElementById("rumus-luas-segitiga")
+    var rumusluas =  document.getElementById("rumus-luas-segitiga");
 
     // Validasi input
     if (alas > 0 && tinggi > 0 && !isNaN(alas) && !isNaN(tinggi)) {
@@ -14,7 +14,6 @@ function hitungLuasSegitiga() {
         hasilLuas.textContent = "Masukkan Nilai Panjang Alas dan Tinggi Terlebih Dahulu";
     }
 }
-
 
 //Keliling Segitiga
 function hitungKelilingSegitiga(){
@@ -37,19 +36,70 @@ function hitungKelilingSegitiga(){
     hasilKeliling.textContent="K = " +keliling;
 }
 
-function resetForm() {
+//---------------------------------------------------Rumus Jajar Genjang
+//Luas Jajar Genjang
+function hitungLuasJajargenjang(){
+    var alas = parseFloat(document.getElementById("alas-jajargenjang").value);
+    var tinggi = parseFloat(document.getElementById("tinggi-jajargenjang").value);
+    var hasilLuas = document.getElementById("hasil-luas-jajargenjang");
+    var rumusluas =  document.getElementById("rumus-luas-jajargenjang");
+
+    //validasi
+    // Validasi input
+    if (alas > 0 && tinggi > 0 && !isNaN(alas) && !isNaN(tinggi)) {
+        var luas = alas * tinggi;
+        rumusluas.textContent = "L = a x t"
+        hasilLuas.innerHTML = "L = "+ alas +" x " +tinggi+ "<br>L = " + luas;
+    } else {
+        hasilLuas.textContent = "Masukkan Nilai Panjang Alas dan Tinggi Terlebih Dahulu";
+    }
+}
+
+//Keliling Jajar Genjang
+function hitungKelilingJajargenjang(){
+    var a = parseFloat(document.getElementById("a-jajargenjang").value);
+    var b = parseFloat(document.getElementById("b-jajargenjang").value);
+    var hasilkeliling = document.getElementById("hasil-keliling-jajargenjang");
+    var rumuskeliling =  document.getElementById("rumus-keliling-jajargenjang");
+
+    //validasi
+    // Validasi input
+    if (a > 0 && b > 0 && !isNaN(a) && !isNaN(b)) {
+        var luas = 2*(a + b);
+        rumuskeliling.textContent = "L = 2 x (a + b)"
+        hasilkeliling.innerHTML = "L = 2 x ("+ a +" + " +b+ ")<br>L = " + luas;
+    } else {
+        hasilkeliling.textContent = "Masukkan Nilai Sisi ke 1 dan Sisi Ke 2 Terlebih Dahulu";
+    }
+}
+function resetFormLS(){
     // Reset input Luas Segitiga
     document.getElementById("alas-segitiga").value = "";
     document.getElementById("tinggi-segitiga").value = "";
     document.getElementById("rumus-luas-segitiga").textContent = "";
     document.getElementById("hasil-luas").textContent = "";
-
+}
+function resetFormKS() {
     // Reset input Keliling Segitiga
     document.getElementById("s1").value = "";
     document.getElementById("s2").value = "";
     document.getElementById("s3").value = "";
     document.getElementById("rumus-keliling-segitiga").textContent = "";
     document.getElementById("hasil-keliling").textContent = "";
+}
+function resetFormLJ(){
+    // Reset input Luas Jajar Genjang
+    document.getElementById("alas-jajargenjang").value = "";
+    document.getElementById("tinggi-jajargenjang").value = "";
+    document.getElementById("rumus-luas-jajargenjang").textContent = "";
+    document.getElementById("hasil-luas-jajargenjang").textContent = "";
+}
+function resetFormKJ() {
+    // Reset input Keliling Jajar Genjang
+    document.getElementById("a-jajargenjang").value = "";
+    document.getElementById("b-jajargenjang").value = "";
+    document.getElementById("rumus-keliling-jajargenjang").textContent = "";
+    document.getElementById("hasil-keliling-jajargenjang").textContent = "";
 }
 
 function tampilkanSegitiga() {
