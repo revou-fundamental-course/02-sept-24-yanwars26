@@ -51,3 +51,23 @@ function resetForm() {
     document.getElementById("rumus-keliling-segitiga").textContent = "";
     document.getElementById("hasil-keliling").textContent = "";
 }
+
+function tampilkanSegitiga() {
+    // Mengambil elemen dengan class 'main-content-segitiga'
+    const segitigaContent = document.querySelector('.main-content-segitiga');
+    const jajargenjangContent = document.querySelector('.main-content-jajargenjang');
+    // Mengubah display menjadi 'block' untuk menampilkannya
+    segitigaContent.style.display = 'flex';
+    jajargenjangContent.style.display = 'none';
+    
+}
+
+function tampilkanJajargenjang() {
+    // Mengambil elemen dengan class 'main-content-jajargenjang'
+    const jajargenjangContent = document.querySelector('.main-content-jajargenjang');
+    const segitigaContent = document.querySelector('.main-content-segitiga');
+    
+    // Mengubah display menjadi 'block' untuk menampilkannya
+    segitigaContent.style.display = 'none';
+    jajargenjangContent.style.display = 'flex';
+}
