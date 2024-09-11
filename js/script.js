@@ -11,7 +11,7 @@ function hitungLuasSegitiga() {
         rumusluas.textContent = "L = 1/2 x a x t"
         hasilLuas.innerHTML = "L = 1/2 x "+ alas +" x " +tinggi+ "<br>L = " + luas;
     } else {
-        hasilLuas.textContent = "Masukkan Nilai Panjang Alas dan Tinggi Terlebih Dahulu";
+        alert('Harap Isi Form dan Pastikan Nilai Bersifat Positif');
     }
 }
 
@@ -24,7 +24,7 @@ function hitungKelilingSegitiga(){
     var rumusKeliling =  document.getElementById("rumus-keliling-segitiga");
     //validasi input
     if (sisi1 <= 0 ||sisi2 <= 0 ||sisi3 <= 0){
-        hasilKeliling.textContent="Sisi segitiga harus bernilai positif";
+        alert('Harap Isi Form dan Pastikan Nilai Bersifat Positif');
         return;
     }
     if (isNaN(sisi1)||isNaN(sisi2)||isNaN(sisi3)){
@@ -51,7 +51,7 @@ function hitungLuasJajargenjang(){
         rumusluas.textContent = "L = a x t"
         hasilLuas.innerHTML = "L = "+ alas +" x " +tinggi+ "<br>L = " + luas;
     } else {
-        hasilLuas.textContent = "Masukkan Nilai Panjang Alas dan Tinggi Terlebih Dahulu";
+        alert('Harap Isi Form dan Pastikan Nilai Bersifat Positif');
     }
 }
 
@@ -69,7 +69,7 @@ function hitungKelilingJajargenjang(){
         rumuskeliling.textContent = "L = 2 x (a + b)"
         hasilkeliling.innerHTML = "L = 2 x ("+ a +" + " +b+ ")<br>L = " + luas;
     } else {
-        hasilkeliling.textContent = "Masukkan Nilai Sisi ke 1 dan Sisi Ke 2 Terlebih Dahulu";
+        alert('Harap Isi Form dan Pastikan Nilai Bersifat Positif');
     }
 }
 function resetFormLS(){
