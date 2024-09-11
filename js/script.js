@@ -1,3 +1,38 @@
+//Ambil dari id rumus dan menambahkan event ubah
+document.getElementById('rumus-segitiga').addEventListener('change', function () {
+    var selectedValue = this.value;
+
+    // Ambil elemen form luas dan keliling segitiga
+    var formLuasSegitiga = document.querySelector('.form-luas-segitiga');
+    var formKelilingSegitiga = document.querySelector('.form-keliling-segitiga');
+    
+    // Cek value yang dipilih dan tampilkan form yang sesuai
+    if (selectedValue === 'ls') {
+        formLuasSegitiga.style.display = 'block';
+        formKelilingSegitiga.style.display = 'none';
+    } else if (selectedValue === 'ks') {
+        formLuasSegitiga.style.display = 'none';
+        formKelilingSegitiga.style.display = 'block';
+    }
+});
+
+//Ambil dari id rumus dan menambahkan event ubah
+document.getElementById('rumus-jajargenjang').addEventListener('change', function () {
+    var selectedValue = this.value;
+
+    // Ambil elemen form luas dan keliling jajargenjang
+    var formLuasJajarGenjang = document.querySelector('.form-luas-jajargenjang');
+    var formKelilingJajarGenjang = document.querySelector('.form-keliling-jajargenjang');
+
+    if (selectedValue === 'lj') {
+        formLuasJajarGenjang.style.display = 'block';
+        formKelilingJajarGenjang.style.display = 'none';
+    } else if (selectedValue === 'kj') {
+        formLuasJajarGenjang.style.display = 'none';
+        formKelilingJajarGenjang.style.display = 'block';
+    }
+});
+
 // Luas Segitiga
 function hitungLuasSegitiga() {
     var alas = parseFloat(document.getElementById("alas-segitiga").value);
@@ -11,7 +46,7 @@ function hitungLuasSegitiga() {
         rumusluas.textContent = "L = 1/2 x a x t"
         hasilLuas.innerHTML = "L = 1/2 x "+ alas +" x " +tinggi+ "<br>L = " + luas;
     } else {
-        hasilLuas.textContent = "Masukkan Nilai Panjang Alas dan Tinggi Terlebih Dahulu";
+        alert('Harap Isi Semua Form, Dan Angka Harus Bernilai Positif');
     }
 }
 
@@ -24,11 +59,11 @@ function hitungKelilingSegitiga(){
     var rumusKeliling =  document.getElementById("rumus-keliling-segitiga");
     //validasi input
     if (sisi1 <= 0 ||sisi2 <= 0 ||sisi3 <= 0){
-        hasilKeliling.textContent="Sisi segitiga harus bernilai positif";
+        alert('Angka Harus Bernilai Positif');
         return;
     }
     if (isNaN(sisi1)||isNaN(sisi2)||isNaN(sisi3)){
-        hasilKeliling.textContent="Masukan Sisi Segitiga"
+        alert('Harap Sisi Segitiga');
         return;
     }
     var keliling = sisi1 + sisi2 + sisi3;
@@ -51,7 +86,7 @@ function hitungLuasJajargenjang(){
         rumusluas.textContent = "L = a x t"
         hasilLuas.innerHTML = "L = "+ alas +" x " +tinggi+ "<br>L = " + luas;
     } else {
-        hasilLuas.textContent = "Masukkan Nilai Panjang Alas dan Tinggi Terlebih Dahulu";
+        alert('Harap Isi Semua Form, Dan Angka Harus Bernilai Positif');
     }
 }
 
@@ -69,7 +104,7 @@ function hitungKelilingJajargenjang(){
         rumuskeliling.textContent = "L = 2 x (a + b)"
         hasilkeliling.innerHTML = "L = 2 x ("+ a +" + " +b+ ")<br>L = " + luas;
     } else {
-        hasilkeliling.textContent = "Masukkan Nilai Sisi ke 1 dan Sisi Ke 2 Terlebih Dahulu";
+        alert('Harap Isi Semua Form, Dan Angka Harus Bernilai Positif');
     }
 }
 function resetFormLS(){
@@ -102,22 +137,29 @@ function resetFormKJ() {
     document.getElementById("hasil-keliling-jajargenjang").textContent = "";
 }
 
-function tampilkanSegitiga() {
-    // Mengambil elemen dengan class 'main-content-segitiga'
-    const segitigaContent = document.querySelector('.main-content-segitiga');
-    const jajargenjangContent = document.querySelector('.main-content-jajargenjang');
-    // Mengubah display menjadi 'block' untuk menampilkannya
-    segitigaContent.style.display = 'flex';
-    jajargenjangContent.style.display = 'none';
-    
+function BDsegitiga(){
+    const Segitiga = document.querySelector('.bd-segitiga');
+    const JajarGenjang = document.querySelector('.bd-jajargenjang');
+    var formLuasJajarGenjang = document.querySelector('.form-luas-jajargenjang');
+    var formKelilingJajarGenjang = document.querySelector('.form-keliling-jajargenjang');
+
+
+
+    Segitiga.style.display='block';
+    JajarGenjang.style.display='none';
+    formLuasJajarGenjang.style.display='none';
+    formKelilingJajarGenjang.style.display='none';
+
 }
 
-function tampilkanJajargenjang() {
-    // Mengambil elemen dengan class 'main-content-jajargenjang'
-    const jajargenjangContent = document.querySelector('.main-content-jajargenjang');
-    const segitigaContent = document.querySelector('.main-content-segitiga');
-    
-    // Mengubah display menjadi 'block' untuk menampilkannya
-    segitigaContent.style.display = 'none';
-    jajargenjangContent.style.display = 'flex';
+function BDjajargenjang(){
+    const Segitiga = document.querySelector('.bd-segitiga');
+    const JajarGenjang = document.querySelector('.bd-jajargenjang');
+    var formLuasSegitiga = document.querySelector('.form-luas-segitiga');
+    var formKelilingSegitiga = document.querySelector('.form-keliling-segitiga');
+
+    JajarGenjang.style.display='block';
+    Segitiga.style.display='none';
+    formLuasSegitiga.style.display='none';
+    formKelilingSegitiga.style.display='none';
 }

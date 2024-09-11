@@ -3,55 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kalkulator Segitga Yanuar</title>
-    <link rel="stylesheet" href="css\style.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Document</title>
 </head>
 <body>
-    <header class="main-header">
-        <h1>Welcome to Katik</h1>
-        <div>
-            <label>Hai Sobat, Selamat datang di Katik :)</label><br>
-            <label>Sebuah web apps sederhana yang berfungsi untuk menghitung nilai luas dan keliling bangun datar</label>    
+    <header class="welcome">
+        <div >
+            <h1>Selamat datang di KATIK</h1>
+            <p>Website kalkulator </p>
         </div>
-        </header>
+    </header>
 
     <main>
-        <!-- Memilih Bangun Datar -->
-        <section class="pilih-bangun-datar">
-                <h4>Silahkan pilih bangun datar terlebih dahulu:</h4>
-                <button type="button" class="btn" onclick="tampilkanSegitiga()">Segitiga</button>
-                <button type="button" class="btn" onclick="tampilkanJajargenjang()">Jajar Genjang</button>
-        </section>
-
-<!-- Main Content Segitiga-->
-        <section class="main-content main-content-segitiga">
-    <!-- Luas Segitiga -->
-            <aside>
-                <section>
-                    <!-- Luas Segitiga -->
-                    <header class="header-segitiga" id="header-segitiga">
-                        <h1>Luas Segitiga</h1>
-                    </header>
-    
-                    <!-- Gambar Segitiga -->
-                    <section class="konten-segitiga">
+        <section class="ukuran-main">
+            <div class="main-form-segitiga">
+                <div class="header-segitiga">
+                    <h1>Silahkan Pilih Bangun Datar</h1>
+                    <hr>
+                </div>
+                <div class="btn-pilih">
+                    <button class="btn-segitiga" onclick="BDsegitiga()">Segitiga</button>
+                    <button class="btn-jajargenjang" onclick="BDjajargenjang()">Jajar Genjang</button>
+                </div>
+                <hr>
+<!-- Bangun Datar Segitiga -->
+<!-- Segitiga -->
+                <section class="bd-segitiga">
+                    <section class="gambar">
                         <div class="gambar-segitiga">
-                            <img src="img/segitiga-img.png" alt="">
+                            <img src="/img/segitiga-img.png">
                         </div>
-                        <!-- Rumus Luas Segitiga -->
-                        <label>Rumus Luas Segitiga :</label>
-                        <label class="rumus-segitiga">L = 1/2 x a x t</label>
-                        <p>Dimana: <br>L = Luas <br>a = Panjang Alas <br>t = Tinggi<br><br></p>
                     </section>
+                    <div class="pilih-hitung">
+                        <label>Silahkan pilih rumus terlebih dahulu:</label>
+                        <select id="rumus-segitiga">
+                            <option value="" selected disabled>Pilih Rumus!</option>
+                            <option value="ls">Luas Segitiga</option>
+                            <option value="ks">Keliling Segitiga</option>
+                        </select>
+                    </div>
+                </section>
+<!-- Bangun Datar Segitiga -->
+<!-- Jajar Genjang -->
+                <section class="bd-jajargenjang">
+                    <section class="gambar">
+                        <div class="gambar-jajargenjang">
+                            <img src="/img/jajargenjang-img.png">
+                        </div>
+                    </section>
+                    <div class="pilih-hitung">
+                        <label>Silahkan pilih rumus terlebih dahulu:</label>
+                        <select id="rumus-jajargenjang">
+                            <option value="" selected disabled>Pilih Rumus!</option>
+                            <option value="lj">Luas Jajar Genjang</option>
+                            <option value="kj">Keliling Jajar Genjang</option>
+                        </select>
+                    </div>
+                </section>
+
+<!-- Perhitungan Luas -->
+<!-- Luas Segitiga -->
+                <div class="form-luas-segitiga" style="display: none;">
+                    <label>Rumus Luas Segitiga :</label>
+                    <label class="rumus-segitiga">L = 1/2 x a x t</label>
+                    <p>Dimana: <br>L = Luas <br>a = Panjang Alas <br>t = Tinggi</p>
                     <!-- Hitung Luas Segitiga -->
                     <section>
                         <h1>Hitung Luas Segitiga</h1>
                         <form onsubmit="event.preventDefault();hitungLuasSegitiga();">
-                            <div>
+                            <div class="tampilan-form">
                                 <label>Alas Segitiga :</label>
                                 <input id="alas-segitiga" type="number" step="any" placeholder="Masukan Alas">
-                            </div>
-                            <div>
                                 <label>Tinggi Segitiga :</label>
                                 <input id="tinggi-segitiga" type="number" step="any" placeholder="Masukan Tinggi">
                             </div>
@@ -61,97 +83,29 @@
                                 <p id="hasil-luas"></p>
                             </div>
                             <div class="btn-hitung">
-                                <button type="submit" class="button-hitung" >Hitung</button>
+                                <button type="submit" class="btn-hitung" >Hitung</button>
                             </div>
                             <div class="btn-reset">
-                                <button type="reset" class="button-reset" onclick="resetFormLS()">Reset</button>
+                                <button type="reset" class="btn-reset" onclick="resetFormLS()">Reset</button>
                             </div>
                         </form>
                     </section>
-                </section>
-            </aside>
+                </div>
 
-    <!-- Keliling Segitiga -->
-            <aside>
-                <section>
-                    <!-- Keliling Segitiga -->
-                    <header class="header-segitiga" id="header-segitiga">
-                        <h1>Keliling Segitiga</h1>
-                    </header>
-    
-                    <!-- Gambar Segitiga -->
-                    <section class="konten-segitiga">
-                        <div class="gambar-segitiga">
-                            <img src="img/segitiga-img.png" alt="">
-                        <!-- Rumus Keliling Segitiga -->
-                        </div>
-                        <label>Rumus Keliling Segitiga :</label>
-                        <label class="rumus-segitiga">K = S1 x S2 x S3</label>
-                        <p>Dimana: <br>K = Keliling <br>S1 = Sisi ke 1 <br>S2 = Sisi ke 2<br>S3 = Sisi ke 3</p>
-                    </section>
-                    <!-- Hitung Keliling Segitiga -->
-                    <section>
-                        <h1>Hitung Keliling Segitiga</h1>
-                        <form onsubmit="event.preventDefault();hitungKelilingSegitiga()">
-                            <div>
-                                <label>S1 :</label>
-                                <input id="s1" type="number" step="any" placeholder="Masukan Sisi ke-1">
-                            </div>
-                            <div>
-                                <label">S2 :</label>
-                                <input id="s2" type="number" step="any" placeholder="Masukan Sisi ke-2">
-                            </div>
-                            <div>
-                                <label>S3 :</label>
-                                <input id="s3" type="number" step="any" placeholder="Masukan Sisi ke-3">
-                            </div>
-                            <p>Hasil Perhitungan:</p>
-                            <div class="perhitungan">
-                                <p id="rumus-keliling-segitiga"></p>
-                                <p id="hasil-keliling"></p>
-                            </div>
-                            <div class="btn-hitung">
-                                <button type="submit" class="button-hitung">Hitung</button>
-                            </div>
-                            <div class="btn-reset">
-                                <button type="reset" class="button-reset" onclick="resetFormKS()">Reset</button>
-                            </div>
-                        </form>
-                    </section>
-                </section>
-            </aside>
-        </section>
-
-<!-- Main Content Jajar Genjang-->
-        <section class="main-content main-content-jajargenjang">
-    <!-- Luas Jajar Genjang -->
-            <aside>
-                <section>
-                    <!-- Luas Jajar Genjang -->
-                    <header class="header-jajargenjang" id="header-jajargenjang">
-                        <h1>Jajar Genjang</h1>
-                    </header>
-    
-                    <!-- Gambar Jajar Genjang -->
-                    <section class="konten-jajargenjang">
-                        <div class="gambar-jajargenjang">
-                            <img src="img/jajargenjang-img.png" alt="">
-                        </div>
-                        <!-- Rumus Luas Jajar Genjang -->
-                        <label>Rumus Luas Jajar Genjang :</label>
-                        <label class="rumus-jajargenjang">L = a x t</label>
-                        <p>Dimana: <br>L = Luas <br>a = Panjang Alas <br>t = Tinggi<br></p>
-                    </section>
-                    <!-- Hitung Luas Jajar Genjang -->
+<!-- Perhitungan Luas -->
+<!-- Luas Jajar Genjang -->
+                <div class="form-luas-jajargenjang" style="display: none;">
+                    <label>Rumus Luas Jajar Genjang :</label>
+                    <label class="rumus-jajargenjang">L = a x t</label>
+                    <p>Dimana: <br>L = Luas <br>a = Panjang Alas <br>t = Tinggi</p>
+                    <!-- Hitung Luas Jajargenjang -->
                     <section>
                         <h1>Hitung Luas Jajar Genjang</h1>
                         <form onsubmit="event.preventDefault();hitungLuasJajargenjang();">
-                            <div>
-                                <label>Alas Jajar Genjang :</label>
+                            <div class="tampilan-form">
+                                <label>Alas:</label>
                                 <input id="alas-jajargenjang" type="number" step="any" placeholder="Masukan Alas">
-                            </div>
-                            <div>
-                                <label >Tinggi Jajar Genjang :</label>
+                                <label>Tinggi:</label>
                                 <input id="tinggi-jajargenjang" type="number" step="any" placeholder="Masukan Tinggi">
                             </div>
                             <p>Hasil Perhitungan:</p>
@@ -160,63 +114,89 @@
                                 <p id="hasil-luas-jajargenjang"></p>
                             </div>
                             <div class="btn-hitung">
-                                <button type="submit" class="button-hitung">Hitung</button>
+                                <button type="submit" class="btn-hitung" >Hitung</button>
                             </div>
                             <div class="btn-reset">
-                                <button type="reset" class="button-reset" onclick="resetFormLJ()">Reset</button>
+                                <button type="reset" class="btn-reset" onclick="resetFormLJ()">Reset</button>
                             </div>
                         </form>
                     </section>
-                </section>
-            </aside>
+                </div>
 
-    <!-- Keliling Jajar Genjang -->
-            <aside>
-                <section>
-                    <!-- Keliling Jajar Genjang -->
-                    <header class="header-jajargenjang" id="header-jajargenjang">
-                        <h1>Keliling Jajar Genjang</h1>
-                    </header>
-    
-                    <!-- Gambar Jajar Genjang -->
-                    <section class="konten-jajargenjang">
-                        <div class="gambar-jajargenjang">
-                            <img src="img/jajargenjang-img.png" alt="">
-                        <!-- Rumus Keliling Jajar Genjang -->
-                        </div>
-                        <label>Rumus Keliling Jajar Genjang :</label>
-                        <label class="rumus-segitiga">K = 2 x (a + b)</label>
-                        <p>Dimana: <br>K = Keliling <br>a = Sisi ke 1 <br>b = Sisi ke 2</p>
+<!-- Perhitungan Keliling -->
+    <!-- Perhitungan Keliling Segitiga -->
+                <div class="form-keliling-segitiga" style="display: none;">
+                    <label>Rumus Keliling Segitiga :</label>
+                    <label class="rumus-segitiga">K = S1 + S2 + S3</label>
+                    <p>Dimana: <br>K = Keliling <br>S1 = Sisi ke 1 <br>S2 = Sisi ke 2<br>S3 = Sisi ke 3</p>
+
+                    <section>
+                        <h1>Hitung Keliling Segitiga</h1>
+                        <form onsubmit="event.preventDefault();hitungKelilingSegitiga();">
+                            <div class="tampilan-form">
+                                <div>
+                                <label>S1 :</label>
+                                <input id="s1" type="number" step="any" placeholder="Masukan Sisi ke-1">
+                                <label">S2 :</label>
+                                <input id="s2" type="number" step="any" placeholder="Masukan Sisi ke-2">
+                                <label>S3 :</label>
+                                <input id="s3" type="number" step="any" placeholder="Masukan Sisi ke-3">
+                                </div>
+                            </div>
+                            <p>Hasil Perhitungan:</p>
+                            <div class="perhitungan">
+                                <p id="rumus-keliling-segitiga"></p>
+                                <p id="hasil-keliling"></p>
+                            </div>
+                                <div class="btn-hitung">
+                                    <button type="submit" class="btn-hitung" >Hitung</button>
+                                </div>
+                            <div class="btn-reset">
+                                <button type="reset" class="btn-reset" onclick="resetFormKS()">Reset</button>
+                            </div>
+                        </form>
                     </section>
-                    <!-- Hitung Keliling Jajar Genjang -->
+                </div>
+<!-- Perhitungan Keliling -->
+ <!-- Perhitungan Keliling Jajar Genjang -->
+                <div class="form-keliling-jajargenjang" style="display: none;">
+                    <label>Rumus Keliling Jajar Genjang :</label>
+                    <label class="rumus-jajargenjang">K = 2 x (a + b)</label>
+                    <p>Dimana: <br>K = Keliling <br>a = Sisi alas<br>b = Sisi miring </p>
+
                     <section>
                         <h1>Hitung Keliling Jajar Genjang</h1>
-                        <form onsubmit="event.preventDefault();hitungKelilingJajargenjang()">
-                            <div>
-                                <label>a :</label>
-                                <input id="a-jajargenjang" type="number" step="any" placeholder="Masukan Sisi ke-1">
-                            </div>
-                            <div>
-                                <label>b :</label>
-                                <input id="b-jajargenjang" type="number" step="any" placeholder="Masukan Sisi ke-2">
+                        <form onsubmit="event.preventDefault();hitungKelilingJajargenjang();">
+                            <div class="tampilan-form">
+                                <div>
+                                    <label>a :</label>
+                                    <input id="a-jajargenjang" type="number" step="any" placeholder="Masukan Sisi Alas">
+                                    <label>b :</label>
+                                    <input id="b-jajargenjang" type="number" step="any" placeholder="Masukan Sisi Miring">
+                                </div>
                             </div>
                             <p>Hasil Perhitungan:</p>
                             <div class="perhitungan">
                                 <p id="rumus-keliling-jajargenjang"></p>
                                 <p id="hasil-keliling-jajargenjang"></p>
                             </div>
-                            <div class="btn-hitung">
-                                <button type="submit" class="button-hitung">Hitung</button>
-                            </div>
+                                <div class="btn-hitung">
+                                    <button type="submit" class="btn-hitung" >Hitung</button>
+                                </div>
                             <div class="btn-reset">
-                                <button type="reset" class="button-reset" onclick="resetFormKJ()">Reset</button>
+                                <button type="reset" class="btn-reset" onclick="resetFormKJ()">Reset</button>
                             </div>
                         </form>
                     </section>
-                </section>
-            </aside>
+                </div>
         </section>
     </main>
-<script src="js/script.js"></script>
+
+    <footer>
+        <p>Mohamad Yanuar Wardinnansah.</p>
+        <p>Course RevoU</p>
+    </footer>
 </body>
+
+<script src="/js/script.js"></script>
 </html>
