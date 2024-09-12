@@ -184,3 +184,44 @@ footer{
         transform: translateX(-200%);
     }
 }
+
+@media only screen and (max-width: 480px) {
+    .main-content {
+        flex-direction: column; /* Mengubah arah flex menjadi kolom */
+    }
+    
+    .konten-kiri,
+    .konten-kanan {
+        display: block; /* Menampilkan konten yang sebelumnya disembunyikan */
+        width: 100%; /* Menyesuaikan lebar dengan konten utama */
+    }
+
+    .btn-pilih{
+        display: block;
+    }
+    
+    .btn-segitiga,
+    .btn-jajargenjang {
+        width: 100%; /* Menyesuaikan lebar tombol dengan konten */
+    }
+
+    .form-perhitungan {
+        width: 90%; /* Menyesuaikan lebar form dengan layar */
+        margin: 10px auto; /* Memberikan margin otomatis untuk pusatkan form */
+        padding: 15px; /* Mengurangi padding agar sesuai dengan ukuran layar */
+    }
+
+    input[type=number] {
+        width: 100%; /* Menyesuaikan lebar input agar penuh */
+    }
+
+    .btn-form {
+        flex-direction: column; /* Mengatur tombol dalam kolom untuk layar kecil */
+    }
+
+    .btn-hitung,
+    .btn-reset {
+        width: 100%; /* Menyesuaikan lebar tombol dengan layar */
+        margin-bottom: 10px; /* Memberikan jarak antar tombol */
+    }
+}
