@@ -1,118 +1,186 @@
-
-.main-header{
-    text-align: center;
-    margin: 0;
-    padding-top: 0%;
+body{
+    background-color: #102A44;
 }
-.pilih-bangun-datar>h4{
-    margin: 0;
-    margin-top: 10px;
-}
-.btn{
-    width: 100%;
-    height: 30px;
-    background-color: lightskyblue;
-}
-.btn:hover{
-    background-color: #03346E;
-    color: aliceblue ;
-}
-
-.header-segitiga>h1{
-    display: flex;
-    height: 80px;
-    background-color: #03346E;
-    align-items: center;
-    justify-content: center;
-    margin-top: 10px;
-    font-weight: bold;
-    color: white;
-    font-size: large;
-}
-
-.header-jajargenjang >h1{
-    display: flex;
-    height: 80px;
-    background-color: #03346E;
-    align-items: center;
-    justify-content: center;
-    margin-top: 10px;
-    font-weight: bold;
-    color: white;
-    font-size: large;
-}
-.konten-segitiga,.konten-jajargenjang{
-    display: flex;
-    flex-direction: column;
-}
-img{
-    width: 100%;
-    height: 100%;
-}
-.gambar-segitiga,.gambar-jajargenjang{
-    width: 300px;
-    height: 300px;
-    align-self: center;
-}
-.rumus-segitiga,.rumus-jajargenjang{
-    text-align: center;
-    font-weight: bold;
-}
-
-input[type=number]{
-    width: 49vw;
-    height: 30px;
-}
-.btn-hitung,.btn-reset{
-    display: flex;
-    justify-content: center;
-    margin-bottom: 10px;
-}
-.button-hitung{
-    background-color: lightskyblue;
-    width: 100px;
-    height: 50px;
-    border-radius: 15px;
+.main-title{
     color: aliceblue;
-    font-weight: bold;
-    border: aliceblue;
+    margin: 0;
+    text-align: center;
 }
-.button-hitung:hover{
-    background-color: #03346E;
-}
+.main-title>h1{
+    margin: 0;
 
-.button-reset{
-    background-color: #f7be91;
-    width: 100px;
-    height: 50px;
-    border-radius: 15px;
-    color: aliceblue;
-    font-weight: bold;
-    border: aliceblue;
 }
-.button-reset:hover{
-    background-color: #f18631;
+.pilih-btn,h2{
+    background-color: aliceblue;
+    margin: 0;
+    color: black;
+    text-transform: uppercase;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.btn-pilih{
+    display: flex;
+    background-color: aliceblue;
+    gap: 5px;
+    padding: 10px;
+}
+.btn-segitiga,.btn-jajargenjang{
+    display: flex;
+    border: none;
+    width: 100%;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    background-color: #d6efff;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 14px;
+    border: solid 1px #102A44;
+}
+.btn-segitiga:hover,.btn-jajargenjang:hover{
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+.btn-segitiga:active,.btn-jajargenjang:active{
+    box-shadow: 4px 5px #666;
+    transform: translateY(4px);
 }
 .main-content{
     display: flex;
-    margin-right: 5px;
+    background-color: aliceblue;
+    width: 100%;
+    height: 100%;
 }
-.main-content-segitiga{
-    display: none;
-}
-.main-content-jajargenjang{
-    display: none;
-}
-.main-content>aside{
+.konten-kiri,.konten-kanan{
     flex: 1;
+    display: none;
 }
 
-.perhitungan>p{
+.konten-kiri>h1,.konten-kanan>h1{
+    text-align: center;
+    font-size: x-large;
+}
+.gambar{
+    display: flex;
+    justify-content: center;
+}
+img{
+    justify-content: center;
+    width: 200px;
+    height: 200px;
+}
+
+.rumus{
+    text-align: center;
+}
+.keterangan{
+    margin-left: 30px;
+    height: 100px;
+}
+.hitung{
+    margin: 30px;
+    margin-top: 0px;
+}
+.hitung>h1{
+    text-align: center;
+}
+
+.form-perhitungan{
+    display: block;
+    box-sizing: border-box;
+    border: 1px solid black;
+    background-color: #d6efff; /* Tambahkan warna background */
+    padding: 20px; /* Tambahkan padding */
+    border-radius: 14px;
+    border: 2px solid #102A44; /* Tambahkan border */
+    box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.2); /* Tambahkan efek bayangan */
+    margin-bottom: 20px; /* Tambahkan jarak bawah */
+    margin: auto; /* Pusatkan form */
+}
+
+.form-perhitungan{
+    display: block;
+    font-weight: bold;
+}
+input[type=number]{
+    width: 100%; /* Ubah lebar input agar penuh */
+    height: 30px; /* Ubah tinggi input */
+    padding: 5px; /* Tambahkan padding */
+    margin-bottom: 15px; /* Tambahkan jarak bawah antar input */
+    border-radius: 10px; /* Tambahkan border-radius */
+    border: 1px solid #102A44; /* Ubah border input */
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Tambahkan bayangan di dalam input */
+    transition: border-color 0.3s ease; /* Tambahkan transisi pada border */
+}
+
+.btn-form{
+    display: flex;
+}
+.btn-hitung,.btn-reset{
+    width: 100%;
+    height: 40px; /* Sesuaikan dengan kebutuhan */
+    border-radius: 14px;
+    margin-bottom: 4px;
+    border: none;
+    color: #ffffff;
+    font-size: 16px; /* Sesuaikan dengan kebutuhan */
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-hitung {
+    background-color: #4CAF50; /* Warna hijau untuk tombol Hitung */
+}
+
+.btn-hitung:hover {
+    background-color: #45a049; /* Warna hijau yang lebih gelap saat hover */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Tambahkan bayangan saat hover */
+}
+
+.btn-reset {
+    background-color: #f44336; /* Warna merah untuk tombol Reset */
+}
+
+.btn-reset:hover {
+    background-color: #e53935; /* Warna merah yang lebih gelap saat hover */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Tambahkan bayangan saat hover */
+}
+
+.hasil-perhitungan{
+    margin-bottom: 10px;
+}
+.hasil-perhitungan>h1{
+    text-align: center;
     margin: 0;
+    margin-bottom: 10px;
 }
 
-@media only screen and (max-width: 480px){
-    .main-content{
-        flex-direction: column;
+footer{
+    width: 100%;
+    height: 100%;
+    margin-top: 10px;
+    text-align: center;
+    background-color: aliceblue;
+    justify-content: center;
+    display: flex;
+    font-family: cursive;
+    
+}
+.marquee{
+    display: flex;
+    position: absolute;
+    white-space: nowrap;
+    animation: marquee 10s linear infinite;
+    color:aliceblue;
+    justify-content: center;
+    text-align: center;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(200%);
+    }
+    100% {
+        transform: translateX(-200%);
     }
 }
